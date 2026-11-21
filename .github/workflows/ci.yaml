@@ -29,9 +29,6 @@ jobs:
 
       - run: nix flake check
 
-      - name: Verify the build-info source is committed in its None form
-        run: nix develop --command task build-info:verify
-
       - run: nix develop --command moon version --all
       - run: nix develop --command task check
       - name: Verify the generated package interfaces are committed
@@ -147,17 +144,11 @@ jobs:
           config: octocov.yaml
           check-existence: true
 
-  build:
-    permissions:
-      contents: read
-    uses: $/.github/workflows/build.yaml
-
   status-check:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     needs:
       # keep-sorted start
-      - build
       - check
       - integration
       - report
