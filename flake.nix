@@ -65,6 +65,7 @@
             };
           in
           {
+            settings.global.excludes = [ "CHANGELOG.md" ];
             settings.formatter.moonfmt = pkgs.lib.mkIf (moonbitToolchain != [ ]) {
               command = pkgs.lib.getExe (
                 pkgs.writeShellApplication {
@@ -195,7 +196,7 @@
               }
               ''
                 cd $src
-                lychee --offline --include-fragments --no-progress .
+                lychee --offline --include-fragments --no-progress --exclude-path CHANGELOG.md .
                 touch $out
               '';
           formatting = treefmt.config.build.check self;
