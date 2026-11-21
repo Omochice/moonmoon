@@ -48,6 +48,8 @@ mapfile -t order < <(dependency_pairs | tsort)
 for name in "${order[@]}"; do
   dir="${dir_of[$name]}"
   echo "==> $name ($dir)"
+  # The local registry index does not list a dependency published earlier in this run.
+  moon update
   if output="$(cd "$dir" && moon publish --dry-run 2>&1)"; then
     printf '%s\n' "$output"
     (cd "$dir" && moon publish)
