@@ -177,6 +177,7 @@
                   ++ (with pkgs; [
                     coreutils
                     git
+                    gnugrep
                     perl
                   ]);
                 text = builtins.readFile ./nix/apps/release.sh;
