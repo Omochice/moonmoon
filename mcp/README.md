@@ -1,6 +1,6 @@
 # Omochice/mcp
 
-A dual-era MCP tool server over stdio, usable by any MoonBit program that offers tools.
+A dual-era Model Context Protocol (MCP) tool server over stdio, usable by any MoonBit program that offers tools.
 
 ## What is supported
 
