@@ -34,7 +34,7 @@ test "one definition decodes a value and advertises its schema" {
     [name.as_member(), limit.as_member()],
     v => (v.get(name), v.get(limit)),
   )
-  assert_eq(query.parse({ "name": "redmoon" }), ("redmoon", 25))
+  assert_eq(query.parse({ "name": "alice" }), ("alice", 25))
   inspect(
     query.to_json_schema().stringify(),
     content=(
