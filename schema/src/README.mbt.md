@@ -1,4 +1,4 @@
-# omochice/schema
+# Omochice/schema
 
 A typed schema DSL in which one definition yields both a JSON Schema and a decoder to a MoonBit value, so the schema a program advertises and the validation it performs cannot drift apart.
 

@@ -1,4 +1,4 @@
-# omochice/mcp
+# Omochice/mcp
 
 A dual-era MCP tool server over stdio, usable by any MoonBit program that offers tools.
 
@@ -8,7 +8,7 @@ A client can rely on the following, whichever era it speaks.
 
 - Legacy clients that open with `initialize`, at protocol versions `2025-11-25`, `2025-06-18`, `2025-03-26`, and `2024-11-05`.
 - Modern clients that name `2026-07-28` in `params._meta` of every request, answered with `resultType` and `server/discover`.
-- `tools/list` and `tools/call`, with the arguments of each tool validated against an `omochice/schema` definition before the handler runs.
+- `tools/list` and `tools/call`, with the arguments of each tool validated against an `Omochice/schema` definition before the handler runs.
 - `ping`, `notifications/initialized`, and `notifications/cancelled`, which stops the task of the cancelled request.
 - One task per request on `moonbitlang/async`, serialized writes to stdout, and a graceful end when stdin closes.
 

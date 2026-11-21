@@ -1,4 +1,4 @@
-# omochice/keyring
+# Omochice/keyring
 
 Four operations on the operating system's credential store, `get`, `set`, `delete`, and `list`, written as C stubs that reach each platform's library without link flags in the consumer's build, so a consumer adds nothing of its own.
 

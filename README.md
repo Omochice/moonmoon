@@ -9,9 +9,9 @@ The table below lists the modules.
 
 | Module                         | Summary                                                                             |
 | ------------------------------ | ----------------------------------------------------------------------------------- |
-| [omochice/keyring](./keyring/) | Access to the operating system's credential store                                   |
-| [omochice/mcp](./mcp/)         | An MCP tool server over stdio                                                       |
-| [omochice/schema](./schema/)   | A typed schema DSL that yields both a JSON Schema and a decoder from one definition |
+| [Omochice/keyring](./keyring/) | Access to the operating system's credential store                                   |
+| [Omochice/mcp](./mcp/)         | An MCP tool server over stdio                                                       |
+| [Omochice/schema](./schema/)   | A typed schema DSL that yields both a JSON Schema and a decoder from one definition |
 
 ## Development
 
