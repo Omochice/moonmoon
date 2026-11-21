@@ -3,12 +3,10 @@ coverage:
     - _build/coverage/cobertura.xml
     - _build/coverage/keyring.xml
   exclude:
-    - integration-test/**
     - mcp/src/example/**
-    - redmoon/src/cmd/**
 testExecutionTime:
   steps:
-    - Run the integration tests with coverage
+    - Run the unit tests with coverage
 comment:
   if: is_pull_request
   updatePrevious: true

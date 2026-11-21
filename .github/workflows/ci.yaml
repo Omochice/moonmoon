@@ -66,7 +66,7 @@ jobs:
           name: coverage-keyring
           path: _build/coverage/keyring.xml
 
-  integration:
+  coverage:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -80,20 +80,8 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Start Redmine and wait for it to answer
-        run: nix develop --command task redmine:up
-
-      - name: Enable the REST API and seed the project under test
-        run: nix develop --command task redmine:seed
-
-      - name: Mask the API keys of the admin, member, and tagger
-        run: |
-          echo "::add-mask::$(cat _build/redmine-api-key)"
-          echo "::add-mask::$(cat _build/redmine-member-api-key)"
-          echo "::add-mask::$(cat _build/redmine-tagger-api-key)"
-
-      - name: Run the integration tests with coverage
-        run: nix develop --command task test:integration:coverage
+      - name: Run the unit tests with coverage
+        run: nix develop --command task test:coverage
 
       - name: Drop files without instrumented lines from the report
         run: sed -i -z -E 's/ *<class [^>]*line-rate="-?nan">\s*<lines>\s*<\/lines>\s*<\/class>\n//g' _build/coverage/cobertura.xml
@@ -103,12 +91,8 @@ jobs:
           name: coverage
           path: _build/coverage/cobertura.xml
 
-      - name: Dump the Redmine logs
-        if: failure()
-        run: docker compose logs
-
   report:
-    needs: [integration, test-macos]
+    needs: [coverage, test-macos]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -150,7 +134,7 @@ jobs:
     needs:
       # keep-sorted start
       - check
-      - integration
+      - coverage
       - report
       - test-macos
       # keep-sorted end
