@@ -20,10 +20,8 @@ module_imports() {
   perl -ne 'print "$1\n" while /"([^"@\s]+)@[^"]*"/g' "$1/moon.mod"
 }
 
-# The wording is unconfirmed until a version has been published once, so a
-# mismatch stops the run instead of publishing a second time.
 reports_already_published() {
-  grep -qiE 'already (been )?(published|exists)' <<<"$1"
+  grep -qF 'Server status: 409' <<<"$1"
 }
 
 declare -A dir_of
@@ -50,6 +48,8 @@ mapfile -t order < <(dependency_pairs | tsort)
 for name in "${order[@]}"; do
   dir="${dir_of[$name]}"
   echo "==> $name ($dir)"
+  # The local registry index does not list a dependency published earlier in this run.
+  moon update
   if output="$(cd "$dir" && moon publish --dry-run 2>&1)"; then
     printf '%s\n' "$output"
     (cd "$dir" && moon publish)
