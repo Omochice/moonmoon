@@ -1,4 +1,4 @@
-name = "omochice/schema"
+name = "Omochice/schema"
 
 // x-release-please-start-version
 

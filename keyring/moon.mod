@@ -1,4 +1,4 @@
-name = "omochice/keyring"
+name = "Omochice/keyring"
 
 // x-release-please-start-version
 

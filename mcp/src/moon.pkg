@@ -3,7 +3,7 @@ import {
   "moonbitlang/async/io",
   "moonbitlang/async/stdio",
   "moonbitlang/core/json",
-  "omochice/schema",
+  "Omochice/schema",
 }
 
 supported_targets = "+native"

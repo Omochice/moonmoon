@@ -1,4 +1,4 @@
-name = "omochice/mcp"
+name = "Omochice/mcp"
 
 // x-release-please-start-version
 
@@ -9,7 +9,7 @@ license = "Zlib"
 
 import {
   "moonbitlang/async@0.22.9",
-  "omochice/schema@1.0.0",
+  "Omochice/schema@1.0.0",
 }
 
 preferred_target = "native"

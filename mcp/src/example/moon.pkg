@@ -1,7 +1,7 @@
 import {
   "moonbitlang/async",
-  "omochice/mcp",
-  "omochice/schema",
+  "Omochice/mcp",
+  "Omochice/schema",
 }
 
 supported_targets = "+native"
