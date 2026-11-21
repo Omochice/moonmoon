@@ -21,7 +21,7 @@ module_imports() {
 }
 
 reports_already_published() {
-  grep -qF 'is duplicated with an existing version' <<<"$1"
+  grep -qF 'Server status: 409' <<<"$1"
 }
 
 declare -A dir_of
