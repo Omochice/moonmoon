@@ -166,6 +166,25 @@
       in
       {
         # keep-sorted start block=yes
+        apps = pkgs.lib.optionalAttrs (moonbitToolchain != [ ]) {
+          release = {
+            type = "app";
+            program = pkgs.lib.getExe (
+              pkgs.writeShellApplication {
+                name = "release";
+                runtimeInputs =
+                  moonbitToolchain
+                  ++ (with pkgs; [
+                    coreutils
+                    git
+                    perl
+                  ]);
+                text = builtins.readFile ./scripts/release.sh;
+              }
+            );
+            meta.description = "Publish every workspace module to mooncakes.io, dependencies first";
+          };
+        };
         checks = {
           # keep-sorted start
           actions =
