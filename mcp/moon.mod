@@ -7,6 +7,10 @@ version = "1.0.0"
 
 license = "Zlib"
 
+readme = "README.md"
+
+repository = "https://github.com/Omochice/moonmoon"
+
 import {
   "moonbitlang/async@0.22.9",
   "Omochice/schema@1.0.0",
