@@ -20,10 +20,8 @@ module_imports() {
   perl -ne 'print "$1\n" while /"([^"@\s]+)@[^"]*"/g' "$1/moon.mod"
 }
 
-# The wording is unconfirmed until a version has been published once, so a
-# mismatch stops the run instead of publishing a second time.
 reports_already_published() {
-  grep -qiE 'already (been )?(published|exists)' <<<"$1"
+  grep -qF 'is duplicated with an existing version' <<<"$1"
 }
 
 declare -A dir_of
