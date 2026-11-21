@@ -56,8 +56,6 @@ node_modules/
 result
 result-*
 
-redmoon/src/build/version_json.mbt
-
 # Ignore automatically generated direnv output
 .direnv
 
