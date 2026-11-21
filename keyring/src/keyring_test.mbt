@@ -2,7 +2,7 @@
 /// The store is shared with the user and with concurrent runs, so the round trip is
 /// opt-in and writes under a service name no other run uses.
 fn store_test_service() -> String? {
-  guard @env.get_env_var("REDMOON_TEST_KEYRING") is Some("1") else {
+  guard @env.get_env_var("MOONMOON_TEST_KEYRING") is Some("1") else {
     return None
   }
   Some("omochice-keyring-test-\{@env.now()}")
