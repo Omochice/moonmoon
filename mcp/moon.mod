@@ -2,7 +2,7 @@ name = "Omochice/mcp"
 
 // x-release-please-start-version
 
-version = "1.0.0"
+version = "0.5.0"
 // x-release-please-end
 
 license = "Zlib"
@@ -13,7 +13,7 @@ repository = "https://github.com/Omochice/moonmoon"
 
 import {
   "moonbitlang/async@0.22.9",
-  "Omochice/schema@1.0.0",
+  "Omochice/schema@0.6.0",
 }
 
 preferred_target = "native"

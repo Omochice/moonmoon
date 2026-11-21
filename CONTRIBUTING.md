@@ -24,7 +24,7 @@ Each library is a separate module listed in the root `moon.work`, so that anothe
 - `schema/` is the typed schema DSL that `mcp/` declares tools with.
 
 Each module has its own version and changelog, and release-please opens a separate release pull request for each module that has changed.
-A release is tagged as `<module>-v<version>`, such as `keyring-v1.1.0`.
+A release is tagged as `<module>-v<version>`, such as `keyring-v0.7.0`.
 The version a module requires of another module in its `moon.mod` is not bumped by a release, so it has to be raised by hand when the dependent module starts to need the newer release.
 
 ## Versioning

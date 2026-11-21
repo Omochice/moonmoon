@@ -2,7 +2,7 @@ name = "Omochice/schema"
 
 // x-release-please-start-version
 
-version = "1.0.0"
+version = "0.5.0"
 // x-release-please-end
 
 license = "Zlib"
