@@ -1,15 +1,20 @@
 {
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
-  "include-component-in-tag": false,
+  "release-type": "simple",
+  "include-component-in-tag": true,
+  "separate-pull-requests": true,
   "packages": {
-    ".": {
-      "release-type": "simple",
-      "extra-files": [
-        { "type": "generic", "path": "keyring/moon.mod" },
-        { "type": "generic", "path": "mcp/moon.mod" },
-        { "type": "generic", "path": "schema/moon.mod" }
-      ],
-      "initial-version": "0.1.0"
+    "keyring": {
+      "component": "keyring",
+      "extra-files": [{ "type": "generic", "path": "moon.mod" }]
+    },
+    "mcp": {
+      "component": "mcp",
+      "extra-files": [{ "type": "generic", "path": "moon.mod" }]
+    },
+    "schema": {
+      "component": "schema",
+      "extra-files": [{ "type": "generic", "path": "moon.mod" }]
     }
   }
 }
