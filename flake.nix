@@ -65,7 +65,10 @@
             };
           in
           {
-            settings.global.excludes = [ "CHANGELOG.md" ];
+            settings.global.excludes = [
+              "CHANGELOG.md"
+              "*/CHANGELOG.md"
+            ];
             settings.formatter.moonfmt = pkgs.lib.mkIf (moonbitToolchain != [ ]) {
               command = pkgs.lib.getExe (
                 pkgs.writeShellApplication {
