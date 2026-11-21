@@ -1,19 +1,18 @@
 apiVersion: gh-infra/v1
 kind: Repository
 metadata:
-  name: redmoon
+  name: moonmoon
   owner: Omochice
 reconcile:
   rulesets: authoritative
   labels: authoritative
 spec:
-  description: A Redmine MCP server written in MoonBit that keeps the API key in the OS keychain.
+  description: Personal MoonBit libraries.
   visibility: public
   archived: false
   topics:
     - moonbit
     - mcp
-    - redmine
     - nix
   labels:
     - name: "autorelease: pending"
