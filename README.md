@@ -5,6 +5,7 @@
 A monorepo of personal [MoonBit](https://www.moonbitlang.com/) libraries.
 
 Each library is a separate module, so a program depends only on the ones it uses.
+The table below lists the modules.
 
 | Module                         | Summary                                                                             |
 | ------------------------------ | ----------------------------------------------------------------------------------- |
