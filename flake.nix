@@ -179,7 +179,7 @@
                     git
                     perl
                   ]);
-                text = builtins.readFile ./scripts/release.sh;
+                text = builtins.readFile ./nix/apps/release.sh;
               }
             );
             meta.description = "Publish every workspace module to mooncakes.io, dependencies first";
