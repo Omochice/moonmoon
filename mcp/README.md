@@ -1,6 +1,6 @@
 # omochice/mcp
 
-A dual-era MCP tool server over stdio, written for redmoon and usable by any MoonBit program that offers tools.
+A dual-era MCP tool server over stdio, usable by any MoonBit program that offers tools.
 
 ## What is supported
 
