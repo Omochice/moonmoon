@@ -1,5 +1,4 @@
 import {
-  "moonbitlang/async",
   "Omochice/mcp",
   "Omochice/schema",
 }
