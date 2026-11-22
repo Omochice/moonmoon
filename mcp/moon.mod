@@ -12,7 +12,7 @@ readme = "README.md"
 repository = "https://github.com/Omochice/moonmoon"
 
 import {
-  "moonbitlang/async@0.22.9",
+  "moonbitlang/async@0.22.10",
   "Omochice/schema@0.6.0",
 }
 
