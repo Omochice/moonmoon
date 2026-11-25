@@ -172,6 +172,28 @@
       {
         # keep-sorted start block=yes
         apps = pkgs.lib.optionalAttrs (moonbitToolchain != [ ]) {
+          mutation-test = {
+            type = "app";
+            program = pkgs.lib.getExe (
+              pkgs.writeShellApplication {
+                name = "mutation-test";
+                runtimeInputs =
+                  moonbitToolchain
+                  ++ (with pkgs; [
+                    coreutils
+                    git
+                    perl
+                    stdenv.cc
+                    turtles
+                  ])
+                  # moon runs dsymutil after linking a native test on macOS, and the cc
+                  # wrapper leaves it off PATH; only mkShell's stdenv adds it there.
+                  ++ pkgs.lib.optional pkgs.stdenv.hostPlatform.isDarwin pkgs.stdenv.cc.bintools.bintools;
+                text = builtins.readFile ./nix/apps/mutation-test.sh;
+              }
+            );
+            meta.description = "Fail when a workspace module's mutation score drops below its threshold";
+          };
           release = {
             type = "app";
             program = pkgs.lib.getExe (
