@@ -94,6 +94,11 @@
               keep-sorted.enable = true;
               nixfmt.enable = true;
               rumdl-check.enable = true;
+              shellcheck.enable = true;
+              shfmt = {
+                enable = true;
+                indent_size = 2;
+              };
               toml-sort.enable = true;
               yamlfmt = {
                 enable = true;
